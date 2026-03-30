@@ -7,8 +7,6 @@ interface ScrollRevealProps {
   delay?: number;
   /** Animation direction */
   direction?: "up" | "left" | "right" | "none";
-  /** Viewport margin for triggering */
-  margin?: string;
   className?: string;
 }
 
@@ -16,11 +14,10 @@ const ScrollReveal: FC<ScrollRevealProps> = ({
   children,
   delay = 0,
   direction = "up",
-  margin = "-60px",
   className,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin });
+  const isInView = useInView(ref, { once: true });
 
   const initialOffset = {
     up: { y: 40, x: 0 },
