@@ -21,7 +21,7 @@ const Masthead: FC = () => (
       <div className="border-t-[4px] border-t-[#2a2a2a] border-b border-b-[#2a2a2a] py-1 mb-1.5">
         <div className="border-t border-t-[#2a2a2a] border-b-[4px] border-b-[#2a2a2a] py-2 md:py-3.5">
           <h1 className="text-[clamp(22px,6vw,72px)] font-extrabold text-[#2a2a2a] uppercase tracking-[0.08em] leading-none">
-            THE PAPER PORTFOLIO
+           BREAKING NEWS
           </h1>
         </div>
       </div>
