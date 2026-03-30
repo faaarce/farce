@@ -3,21 +3,27 @@ import { rule, lbl, just } from "../styles/classNames";
 import { experiences } from "../data";
 
 const ExperienceSection: FC = () => (
-  <>
+  <section id="experience" aria-labelledby="experience-heading">
     <div className={`${rule} pt-1`}>
-      <div className={`${lbl} mb-1`}>CAREER · APPOINTMENTS</div>
+      <div className={`${lbl} mb-1`} id="experience-heading">
+        CAREER · APPOINTMENTS
+      </div>
       <div className="border-t-2 border-[#2a2a2a]" />
     </div>
 
-    <div className={`${rule} grid grid-cols-3`}>
+    <div className={`${rule} grid grid-cols-1 md:grid-cols-3`}>
       {experiences.map((t, i) => (
         <div
           key={t.name}
           className={`${
-            i < 2 ? "border-r border-[#b5b0a8]" : ""
+            i < 2 ? "md:border-r border-[#b5b0a8]" : ""
           } py-[18px] ${
-            i === 0 ? "pr-4" : i === 2 ? "pl-4" : "px-4"
-          }`}
+            i === 0
+              ? "pr-0 md:pr-4"
+              : i === 2
+                ? "pl-0 md:pl-4"
+                : "px-0 md:px-4"
+          } ${i > 0 ? "border-t md:border-t-0" : ""}`}
         >
           <div className="font-extrabold text-[13px] uppercase text-[#2a2a2a] mb-0.5">
             {t.name}
@@ -32,7 +38,7 @@ const ExperienceSection: FC = () => (
         </div>
       ))}
     </div>
-  </>
+  </section>
 );
 
 export default ExperienceSection;

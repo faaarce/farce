@@ -10,8 +10,8 @@ export const rule = "border-b border-[#b5b0a8]";
 /** Thick double-rule */
 export const ruleThick = "border-b-[3px] border-double border-[#2a2a2a]";
 
-/** Right-column border */
-export const colR = "border-r border-[#b5b0a8]";
+/** Right-column border — only on md+ screens */
+export const colR = "md:border-r border-[#b5b0a8]";
 
 /** Justified hyphenated text */
 export const just = "text-justify [hyphens:auto]";

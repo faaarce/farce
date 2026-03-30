@@ -1,11 +1,11 @@
 import type { FC } from "react";
-import { rule, colR, lbl, just, imgB } from "../styles/classNames";
+import { rule, lbl, just, imgB } from "../styles/classNames";
 import { IMAGES } from "../data";
 
 const EditorialColumns: FC = () => (
-  <div className={`${rule} grid grid-cols-[1fr_1.1fr_1.3fr]`}>
+  <div className={`${rule} grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1.1fr_1.3fr]`}>
     {/* Upcoming */}
-    <div className={`${colR} pr-[18px] py-5`}>
+    <div className="md:border-r border-[#b5b0a8] pr-0 md:pr-[18px] py-5">
       <div className={`${lbl} mb-1.5`}>LATEST</div>
       <h3 className="font-extrabold text-[17px] uppercase text-[#2a2a2a] mb-2.5 -tracking-[0.01em]">
         UPCOMING NEXT
@@ -18,7 +18,7 @@ const EditorialColumns: FC = () => (
     </div>
 
     {/* Timepad */}
-    <div className={`${colR} px-[18px] py-5`}>
+    <div className="lg:border-r border-[#b5b0a8] border-t md:border-t-0 px-0 md:px-[18px] py-5">
       <img
         src={IMAGES.timepad}
         alt="Timepad — time management application"
@@ -38,7 +38,7 @@ const EditorialColumns: FC = () => (
     </div>
 
     {/* Manifesto */}
-    <div className="pl-[18px] py-5">
+    <div className="border-t md:border-t-0 pl-0 lg:pl-[18px] py-5 md:col-span-2 lg:col-span-1">
       <h3 className="font-extrabold text-[clamp(26px,4.5vw,48px)] uppercase text-[#2a2a2a] leading-[0.92] mb-1 -tracking-[0.02em]">
         THINK, CREATE
       </h3>
@@ -46,7 +46,10 @@ const EditorialColumns: FC = () => (
         DELIVER
       </h3>
       <p className={`${just} text-sm text-[#333] leading-[1.65] mb-3`}>
-        <span className="float-left text-[44px] font-extrabold leading-[0.75] mr-[5px] mt-[5px] text-[#2a2a2a]" aria-hidden="true">
+        <span
+          className="float-left text-[44px] font-extrabold leading-[0.75] mr-[5px] mt-[5px] text-[#2a2a2a]"
+          aria-hidden="true"
+        >
           A
         </span>
         &nbsp;strong project is created by deep collaboration. I design,

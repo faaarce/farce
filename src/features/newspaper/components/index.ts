@@ -14,3 +14,6 @@ export { default as BottomProjects } from "./BottomProjects";
 export { default as ContactSection } from "./ContactSection";
 export { default as Marquee } from "./Marquee";
 export { default as Footer } from "./Footer";
+export { default as Navigation } from "./Navigation";
+export { default as PortfolioDetail } from "./PortfolioDetail";
+export { default as ScrollReveal } from "./ScrollReveal";

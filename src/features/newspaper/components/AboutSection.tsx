@@ -1,16 +1,16 @@
 import type { FC } from "react";
-import { rule, colR, lbl, just } from "../styles/classNames";
+import { rule, lbl, just } from "../styles/classNames";
 import { aboutParagraphs } from "../data";
 
 const AboutSection: FC = () => (
-  <section aria-labelledby="about-heading">
+  <section id="about" aria-labelledby="about-heading">
     <div className={`${rule} pt-5`}>
       <div className={`${lbl} mb-3`}>ABOUT THE DEVELOPER</div>
     </div>
 
-    <div className={`${rule} grid grid-cols-[1.3fr_1fr]`}>
+    <div className={`${rule} grid grid-cols-1 md:grid-cols-[1.3fr_1fr]`}>
       {/* Left — bio */}
-      <div className={`${colR} pr-6 py-5`}>
+      <div className="md:border-r border-[#b5b0a8] pr-0 md:pr-6 py-5">
         <h2
           id="about-heading"
           className="font-extrabold text-[clamp(28px,4vw,48px)] uppercase text-[#2a2a2a] leading-[0.92] mb-1 -tracking-[0.02em]"
@@ -38,13 +38,22 @@ const AboutSection: FC = () => (
       </div>
 
       {/* Right — key values */}
-      <div className="pl-6 py-5">
+      <div className="pl-0 md:pl-6 py-5">
         <div className={`${lbl} mb-3`}>CORE VALUES</div>
 
         {[
-          { title: "CLEAN ARCHITECTURE", desc: "Every project starts with solid foundations — MVVM, Clean Architecture, and separation of concerns are non-negotiable." },
-          { title: "USER-FIRST DESIGN", desc: "I build interfaces that people actually enjoy using. Performance and aesthetics go hand-in-hand." },
-          { title: "CONTINUOUS LEARNING", desc: "From iOS to full-stack web, I actively expand my toolkit. Currently deep-diving into TanStack ecosystem and SSR patterns." },
+          {
+            title: "CLEAN ARCHITECTURE",
+            desc: "Every project starts with solid foundations — MVVM, Clean Architecture, and separation of concerns are non-negotiable.",
+          },
+          {
+            title: "USER-FIRST DESIGN",
+            desc: "I build interfaces that people actually enjoy using. Performance and aesthetics go hand-in-hand.",
+          },
+          {
+            title: "CONTINUOUS LEARNING",
+            desc: "From iOS to full-stack web, I actively expand my toolkit. Currently deep-diving into TanStack ecosystem and SSR patterns.",
+          },
         ].map((val) => (
           <div key={val.title} className="mb-4">
             <h3 className="font-extrabold text-[13px] uppercase text-[#2a2a2a] mb-1">

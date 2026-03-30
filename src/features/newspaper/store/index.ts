@@ -1,9 +1,11 @@
 import { atom } from "jotai";
-import type { AnimationPhase } from "../types";
+import type { AnimationPhase, PortfolioProject } from "../types";
 
 // ── Animation state ──
 export const animationPhaseAtom = atom<AnimationPhase>("initial");
-export const isExpandedAtom = atom((get) => get(animationPhaseAtom) === "expanded");
+export const isExpandedAtom = atom(
+  (get) => get(animationPhaseAtom) === "expanded"
+);
 
 // ── Contact form state ──
 export interface ContactFormData {
@@ -22,3 +24,6 @@ export const contactSubmittedAtom = atom(false);
 
 // ── Navigation / active section ──
 export const activeSectionAtom = atom<string>("hero");
+
+// ── Portfolio detail modal ──
+export const selectedProjectAtom = atom<PortfolioProject | null>(null);

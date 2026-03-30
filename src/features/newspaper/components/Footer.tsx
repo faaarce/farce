@@ -2,13 +2,15 @@ import type { FC } from "react";
 import { IMAGES, SOCIAL_LINKS } from "../data";
 
 const Footer: FC = () => (
-  <div className="flex justify-between items-center py-3 pb-4">
+  <div className="flex flex-col sm:flex-row justify-between items-center gap-2 py-3 pb-4">
     <div className="font-extrabold text-[11px] uppercase text-[#2a2a2a] flex items-center gap-2 tracking-[0.5px]">
       FARIS &copy; 2026
       <img
         src={IMAGES.portrait}
         alt=""
         className="w-3.5 h-3.5 rounded-full object-cover"
+        width={14}
+        height={14}
       />
       <span className="font-normal italic text-[#888] text-[10px] underline cursor-pointer normal-case">
         Legal
@@ -18,6 +20,8 @@ const Footer: FC = () => (
       <a
         href={SOCIAL_LINKS.linkedin}
         className="text-[#555] no-underline hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         LINKEDIN
       </a>
@@ -25,6 +29,8 @@ const Footer: FC = () => (
       <a
         href={SOCIAL_LINKS.github}
         className="text-[#555] no-underline hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         GITHUB
       </a>

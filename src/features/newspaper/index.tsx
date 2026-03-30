@@ -20,6 +20,9 @@ import {
   ContactSection,
   Marquee,
   Footer,
+  Navigation,
+  PortfolioDetail,
+  ScrollReveal,
 } from "./components";
 
 const NewspaperContent: FC = () => {
@@ -31,6 +34,12 @@ const NewspaperContent: FC = () => {
         isExpanded ? "overflow-auto h-auto" : "overflow-hidden h-screen"
       }`}
     >
+      {/* Sticky Navigation — appears after scroll */}
+      {isExpanded && <Navigation />}
+
+      {/* Portfolio Detail Modal */}
+      <PortfolioDetail />
+
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-[#1a1a1a] z-0 pointer-events-none transition-opacity duration-300"
@@ -62,7 +71,7 @@ const NewspaperContent: FC = () => {
           }}
         >
           <main
-            className="max-w-[1200px] mx-auto px-7"
+            className="max-w-[1200px] mx-auto px-4 md:px-7"
             style={{ fontFamily: SERIF_FONT }}
             role="main"
           >
@@ -71,26 +80,51 @@ const NewspaperContent: FC = () => {
               <NameBanner />
             </header>
 
-            <HeroSection />
+            <ScrollReveal>
+              <HeroSection />
+            </ScrollReveal>
 
             <Ornament />
 
-            <AboutSection />
+            <ScrollReveal>
+              <AboutSection />
+            </ScrollReveal>
 
-            <WebsiteBanner />
-            <EditorialColumns />
+            <ScrollReveal>
+              <WebsiteBanner />
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <EditorialColumns />
+            </ScrollReveal>
+
             <StatsRow />
 
-            <FeaturedWorks />
+            <ScrollReveal>
+              <FeaturedWorks />
+            </ScrollReveal>
+
             <Ornament />
 
-            <ExperienceSection />
-            <TestimonialsSection />
-            <SkillsSection />
+            <ScrollReveal>
+              <ExperienceSection />
+            </ScrollReveal>
 
-            <BottomProjects />
+            <ScrollReveal>
+              <TestimonialsSection />
+            </ScrollReveal>
 
-            <ContactSection />
+            <ScrollReveal>
+              <SkillsSection />
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <BottomProjects />
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <ContactSection />
+            </ScrollReveal>
 
             <Marquee />
 

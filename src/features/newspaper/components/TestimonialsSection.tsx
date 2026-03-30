@@ -11,13 +11,23 @@ const TestimonialsSection: FC = () => (
       <div className="border-t-2 border-[#2a2a2a]" />
     </div>
 
-    <div className={`${rule} grid grid-cols-3`}>
+    <div className={`${rule} grid grid-cols-1 md:grid-cols-3`}>
       {testimonials.map((t, i) => (
         <blockquote
           key={t.name}
-          className={`${i < 2 ? "border-r border-[#b5b0a8]" : ""} py-5 ${i === 0 ? "pr-5" : i === 2 ? "pl-5" : "px-5"}`}
+          className={`${
+            i < 2 ? "md:border-r border-[#b5b0a8]" : ""
+          } py-5 ${
+            i === 0
+              ? "pr-0 md:pr-5"
+              : i === 2
+                ? "pl-0 md:pl-5"
+                : "px-0 md:px-5"
+          } ${i > 0 ? "border-t md:border-t-0" : ""}`}
         >
-          <p className={`${just} text-sm italic text-[#333] leading-[1.6] mb-4`}>
+          <p
+            className={`${just} text-sm italic text-[#333] leading-[1.6] mb-4`}
+          >
             &ldquo;{t.quote}&rdquo;
           </p>
           <div className="w-6 h-px bg-[#b5b0a8] mb-3" />

@@ -1,11 +1,15 @@
 import type { FC } from "react";
-import { rule, colR, lbl, just, imgB } from "../styles/classNames";
+import { rule, lbl, just, imgB } from "../styles/classNames";
 import { IMAGES } from "../data";
 
 const HeroSection: FC = () => (
-  <section aria-labelledby="hero-heading" className={`${rule} grid grid-cols-[1fr_1.2fr]`}>
+  <section
+    id="hero"
+    aria-labelledby="hero-heading"
+    className={`${rule} grid grid-cols-1 md:grid-cols-[1fr_1.2fr]`}
+  >
     {/* Left column */}
-    <div className={`${colR} pr-6 py-6`}>
+    <div className="md:border-r border-[#b5b0a8] pr-0 md:pr-6 py-5 md:py-6">
       <div className={`${lbl} mb-2`}>SPECIAL REPORT</div>
       <h2
         id="hero-heading"
@@ -15,7 +19,7 @@ const HeroSection: FC = () => (
         <br />
         ENGINEER!
       </h2>
-      <div className="w-10 h-[3px] bg-[#2a2a2a] mb-[18px]" aria-hidden="true" />
+      <div className="w-10 h-[3px] bg-[#2a2a2a] mb-4 md:mb-[18px]" aria-hidden="true" />
 
       <img
         src={IMAGES.illustration}
@@ -23,11 +27,14 @@ const HeroSection: FC = () => (
         loading="lazy"
         width={280}
         height={350}
-        className={`${imgB} w-[70%] aspect-[4/5] object-cover mb-3.5 block`}
+        className={`${imgB} w-[50%] md:w-[70%] aspect-[4/5] object-cover mb-3.5 block`}
       />
 
       <p className={`${just} text-sm leading-[1.65] text-[#333]`}>
-        <span className="float-left text-[58px] font-extrabold leading-[0.75] mr-1.5 mt-1.5 text-[#2a2a2a]" aria-hidden="true">
+        <span
+          className="float-left text-[42px] md:text-[58px] font-extrabold leading-[0.75] mr-1.5 mt-1.5 text-[#2a2a2a]"
+          aria-hidden="true"
+        >
           A
         </span>
         &nbsp;Computer Science graduate from Padjadjaran University with a
@@ -43,7 +50,7 @@ const HeroSection: FC = () => (
     </div>
 
     {/* Right column */}
-    <div className="pl-6 py-6">
+    <div className="pl-0 md:pl-6 py-5 md:py-6">
       <img
         src={IMAGES.portrait}
         alt="Portrait of Mohammad Faris Arie Prasetyo"
@@ -69,7 +76,7 @@ const HeroSection: FC = () => (
 
       {/* Pull quote */}
       <blockquote className="mt-6 py-4 border-t-2 border-t-[#2a2a2a] border-b border-b-[#b5b0a8]">
-        <p className="text-lg italic text-[#2a2a2a] leading-[1.4] text-center">
+        <p className="text-base md:text-lg italic text-[#2a2a2a] leading-[1.4] text-center">
           &ldquo;Like an artisan, I start from raw code and give life to iconic
           products.&rdquo;
         </p>

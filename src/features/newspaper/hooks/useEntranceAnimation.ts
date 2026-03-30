@@ -17,15 +17,15 @@ export function useEntranceAnimation() {
       setPhase("sliding");
       await controls.start({
         y: "60vh",
-        transition: { duration: 2.5, ease: [0.22, 1, 0.36, 1] },
+        transition: { duration: 1.8, ease: [0.22, 1, 0.36, 1] },
       });
 
-      await delay(200);
+      await delay(150);
 
       setPhase("rotating");
       await controls.start({
-        rotate: -1080,
-        transition: { duration: 2, ease: [0.4, 0, 0.2, 1] },
+        rotate: -360,
+        transition: { duration: 1.2, ease: [0.4, 0, 0.2, 1] },
       });
 
       setPhase("zooming");
@@ -34,7 +34,7 @@ export function useEntranceAnimation() {
         borderRadius: "0px",
         height: "100%",
         y: "0vh",
-        transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] },
+        transition: { duration: 1, ease: [0.22, 1, 0.36, 1] },
       });
 
       setPhase("expanded");

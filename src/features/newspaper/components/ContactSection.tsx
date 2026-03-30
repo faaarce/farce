@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { useAtom } from "jotai";
 import { contactFormAtom, contactSubmittedAtom } from "../store";
-import { rule, colR, lbl, just } from "../styles/classNames";
+import { rule, lbl, just } from "../styles/classNames";
 import { SOCIAL_LINKS } from "../data";
 
 const inputClass =
@@ -20,7 +20,6 @@ const ContactSection: FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In production → send to API / Contentful / email service
     console.log("Contact form submitted:", form);
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 4000);
@@ -28,15 +27,15 @@ const ContactSection: FC = () => {
   };
 
   return (
-    <section aria-labelledby="contact-heading">
+    <section id="contact" aria-labelledby="contact-heading">
       <div className={`${rule} pt-1`}>
         <div className={`${lbl} mb-1`}>GET IN TOUCH</div>
         <div className="border-t-2 border-[#2a2a2a]" />
       </div>
 
-      <div className={`${rule} grid grid-cols-[1fr_1.2fr]`}>
+      <div className={`${rule} grid grid-cols-1 md:grid-cols-[1fr_1.2fr]`}>
         {/* Left — info */}
-        <div className={`${colR} pr-6 py-5`}>
+        <div className="md:border-r border-[#b5b0a8] pr-0 md:pr-6 py-5">
           <h2
             id="contact-heading"
             className="font-extrabold text-[clamp(28px,4.5vw,48px)] uppercase text-[#2a2a2a] leading-[0.9] mb-1 -tracking-[0.02em]"
@@ -57,15 +56,29 @@ const ContactSection: FC = () => {
 
           <div className="space-y-2">
             {[
-              { label: "EMAIL", href: SOCIAL_LINKS.email, text: "farisariep@gmail.com" },
-              { label: "LINKEDIN", href: SOCIAL_LINKS.linkedin, text: "linkedin.com/in/farisarie" },
-              { label: "GITHUB", href: SOCIAL_LINKS.github, text: "github.com/farisarie" },
+              {
+                label: "EMAIL",
+                href: SOCIAL_LINKS.email,
+                text: "farisariep@gmail.com",
+              },
+              {
+                label: "LINKEDIN",
+                href: SOCIAL_LINKS.linkedin,
+                text: "linkedin.com/in/farisarie",
+              },
+              {
+                label: "GITHUB",
+                href: SOCIAL_LINKS.github,
+                text: "github.com/farisarie",
+              },
             ].map((link) => (
               <div key={link.label} className="flex items-baseline gap-3">
-                <span className={`${lbl} !text-[8px] w-16 shrink-0`}>{link.label}</span>
+                <span className={`${lbl} !text-[8px] w-16 shrink-0`}>
+                  {link.label}
+                </span>
                 <a
                   href={link.href}
-                  className="text-[12px] text-[#2a2a2a] underline hover:text-[#666] transition-colors"
+                  className="text-[12px] text-[#2a2a2a] underline hover:text-[#666] transition-colors break-all"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -77,7 +90,7 @@ const ContactSection: FC = () => {
         </div>
 
         {/* Right — form */}
-        <div className="pl-6 py-5">
+        <div className="pl-0 md:pl-6 py-5 border-t md:border-t-0">
           <div className={`${lbl} mb-3`}>SEND A MESSAGE</div>
 
           {submitted ? (
@@ -92,7 +105,10 @@ const ContactSection: FC = () => {
           ) : (
             <div className="space-y-3">
               <div>
-                <label htmlFor="contact-name" className={`${lbl} !text-[8px] block mb-1`}>
+                <label
+                  htmlFor="contact-name"
+                  className={`${lbl} !text-[8px] block mb-1`}
+                >
                   YOUR NAME
                 </label>
                 <input
@@ -109,7 +125,10 @@ const ContactSection: FC = () => {
               </div>
 
               <div>
-                <label htmlFor="contact-email" className={`${lbl} !text-[8px] block mb-1`}>
+                <label
+                  htmlFor="contact-email"
+                  className={`${lbl} !text-[8px] block mb-1`}
+                >
                   YOUR EMAIL
                 </label>
                 <input
@@ -126,7 +145,10 @@ const ContactSection: FC = () => {
               </div>
 
               <div>
-                <label htmlFor="contact-message" className={`${lbl} !text-[8px] block mb-1`}>
+                <label
+                  htmlFor="contact-message"
+                  className={`${lbl} !text-[8px] block mb-1`}
+                >
                   MESSAGE
                 </label>
                 <textarea
